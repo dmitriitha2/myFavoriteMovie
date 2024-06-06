@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/purple"
+    tools:context=".RegActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="160dp"
+        android:fontFamily="@font/inter_bold"
+        android:lineSpacingExtra="7dp"
+        android:text="@string/go_to_reg"
+        android:textColor="@color/white_text_1"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/user_email"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:textColorHint="#6a6a6a"
+        android:textColor="#f0e8fd"
+        android:hint="E-mail" />
+
+    <EditText
+        android:id="@+id/user_login"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:inputType="text"
+        android:textColorHint="#6a6a6a"
+        android:textColor="#f0e8fd"
+        android:hint="Логин" />
+
+    <EditText
+        android:id="@+id/user_pass"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:textColorHint="#6a6a6a"
+        android:textColor="#f0e8fd"
+        android:hint="Пароль" />
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="150dp"
+        android:layout_marginTop="40dp"
+        android:layout_height="wrap_content"
+        android:text="Регистрация"
+        android:textStyle="bold"
+        android:textColor="#f0e8fd"
+        android:backgroundTint="#FF8C94"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/go_to_auth"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/inter"
+        android:lineSpacingExtra="7dp"
+        android:text="@string/go_to_auth"
+        android:textColor="#f0e8fd"
+        android:textSize="17dp"
+        android:textStyle="bold" />
+
+</LinearLayout>
