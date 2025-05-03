@@ -9,4 +9,5 @@ data class Movie(
     val genre: String,
     val rating: Float,
     val description: String
+    //val duration: String
 )
