@@ -3,6 +3,7 @@ package com.example.basicapp
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import androidx.core.database.getStringOrNull
 
 class MoviesDbHelper(context: Context) : SQLiteOpenHelper(context, "movies.db", null, 1) {
     override fun onCreate(db: SQLiteDatabase) {
@@ -18,16 +19,15 @@ class MoviesDbHelper(context: Context) : SQLiteOpenHelper(context, "movies.db", 
 
         if (cursor.moveToFirst()) {
             do {
-                val id = cursor.getInt(cursor.getColumnIndexOrThrow("kinopoiskId"))
-                val nameOriginal = cursor.getString(cursor.getColumnIndexOrThrow("nameOriginal"))
-                val nameRu = cursor.getString(cursor.getColumnIndexOrThrow("nameRu"))
-                val country = cursor.getString(cursor.getColumnIndexOrThrow("countries"))
-                val year = cursor.getInt(cursor.getColumnIndexOrThrow("year"))
-                val genre = cursor.getString(cursor.getColumnIndexOrThrow("genres"))
+                val nameRu = cursor.getString(cursor.getColumnIndexOrThrow("titleRus"))
+                val nameOriginal = cursor.getStringOrNull(cursor.getColumnIndexOrThrow("titleOrig"))
+                val image = cursor.getString(cursor.getColumnIndexOrThrow("image"))
+                val year = cursor.getInt(cursor.getColumnIndexOrThrow("release_year"))
                 val rating = cursor.getFloat(cursor.getColumnIndexOrThrow("ratingKinopoisk"))
+                val ageRating = cursor.getStringOrNull(cursor.getColumnIndexOrThrow("age_rating"))
                 val description = cursor.getString(cursor.getColumnIndexOrThrow("description"))
 
-                movies.add(Movie(id, nameOriginal, nameRu, country, year, genre, rating, description))
+                movies.add(Movie(nameRu, nameOriginal, image, year, rating, ageRating, description))
             } while (cursor.moveToNext())
         }
 

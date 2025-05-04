@@ -51,7 +51,7 @@
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
-            app:srcCompat="@drawable/shawshank" />
+            app:srcCompat="@drawable/a326" />
 
         <TextView
             android:id="@+id/movie_info_title"

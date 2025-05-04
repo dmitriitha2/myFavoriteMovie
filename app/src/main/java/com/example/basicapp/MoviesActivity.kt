@@ -23,8 +23,7 @@ class MoviesActivity : AppCompatActivity() {
 
         copyDatabase(this)
         val moviesList: RecyclerView = findViewById(R.id.movies_list)
-        val dbHelper = MoviesDbHelper(this)
-        val movies = dbHelper.getAllMovies()
+        val movies = MoviesDbHelper(this).getAllMovies()
 
 
         //val movies = arrayListOf<Movie>()
