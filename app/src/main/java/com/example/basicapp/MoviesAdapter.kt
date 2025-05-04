@@ -35,10 +35,10 @@ class MoviesAdapter(var movies: List<Movie>, var context: Context): RecyclerView
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
-        holder.title.text = movies[position].title
-        holder.country.text = movies[position].country + ","
+        holder.title.text = movies[position].titleRus
+        //holder.country.text = movies[position].country + ","
         holder.year.text = movies[position].year.toString() + "г."
-        holder.genre.text = movies[position].genre
+        //holder.genre.text = movies[position].genres
         holder.rating.text = "Рейтинг: " + movies[position].rating.toString()
 
         val imageId = context.resources.getIdentifier(
@@ -50,7 +50,7 @@ class MoviesAdapter(var movies: List<Movie>, var context: Context): RecyclerView
 
         holder.layout.setOnClickListener {
             val intent = Intent(context, MovieInfoActivity::class.java)
-            intent.putExtra("MovieTitle", movies[position].title)
+            intent.putExtra("MovieTitle", movies[position].titleRus)
             intent.putExtra("MovieImage", movies[position].image)
             intent.putExtra("MovieDesc", movies[position].description)
             context.startActivity(intent)

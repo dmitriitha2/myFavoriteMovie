@@ -37,6 +37,9 @@ android {
 
 dependencies {
 
+    implementation("org.xerial:sqlite-jdbc:3.36.0.3")
+    implementation("com.squareup.okhttp3:okhttp:4.9.3")
+    implementation("com.google.code.gson:gson:2.10.1")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
