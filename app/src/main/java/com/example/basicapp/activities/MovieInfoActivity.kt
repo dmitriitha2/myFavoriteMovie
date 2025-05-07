@@ -1,6 +1,5 @@
-package com.example.basicapp
+package com.example.basicapp.activities
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.ImageView
@@ -10,6 +9,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.basicapp.R
 
 class MovieInfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

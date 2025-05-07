@@ -2,6 +2,7 @@ package com.example.basicapp
 
 import android.content.Context
 import android.content.Intent
+import android.database.sqlite.SQLiteDatabase
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,8 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.basicapp.activities.MovieInfoActivity
+import java.sql.DriverManager
 
 class MoviesAdapter(var movies: List<Movie>, var context: Context): RecyclerView.Adapter<MoviesAdapter.MyViewHolder>() {
 
@@ -35,11 +38,16 @@ class MoviesAdapter(var movies: List<Movie>, var context: Context): RecyclerView
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
-        holder.title.text = movies[position].titleRus
-        //holder.country.text = movies[position].country + ","
+        val title = movies[position].titleRus
+        val countries = movies[position].countries
+        val genres = movies[position].genres
+
+        holder.title.text = if (title.length <= 23) title else title.substring(0, 18) + "…"
+        holder.country.text = if (countries.length <= 18) countries + "," else countries.substring(0, 18) + "…"
         holder.year.text = movies[position].year.toString() + "г."
-        //holder.genre.text = movies[position].genres
+        holder.genre.text = if (genres.length <= 25) genres + "," else genres.substring(0, 25) + "…"
         holder.rating.text = "Рейтинг: " + movies[position].rating.toString()
+
 
         val imageId = context.resources.getIdentifier(
             movies[position].image,
@@ -55,5 +63,10 @@ class MoviesAdapter(var movies: List<Movie>, var context: Context): RecyclerView
             intent.putExtra("MovieDesc", movies[position].description)
             context.startActivity(intent)
         }
+    }
+
+    fun updateList(newMovies: List<Movie>) {
+        movies = newMovies
+        notifyDataSetChanged()
     }
 }

@@ -1,4 +1,4 @@
-package com.example.basicapp
+package com.example.basicapp.activities
 
 import android.content.Intent
 import android.graphics.Color
@@ -11,6 +11,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.basicapp.UserDbHelper
+import com.example.basicapp.R
 
 class AuthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,7 +58,7 @@ class AuthActivity : AppCompatActivity() {
             if (errorMessage.isNotEmpty())
                 Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
             else {
-                val db = DbHelper(this, null)
+                val db = UserDbHelper(this, null)
                 try {
                     val isAuth = db.getUser(login, pass)
 

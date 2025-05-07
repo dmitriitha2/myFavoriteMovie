@@ -1,4 +1,4 @@
-package com.example.basicapp
+package com.example.basicapp.activities
 
 import android.content.Intent
 import android.graphics.Color
@@ -11,6 +11,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.basicapp.UserDbHelper
+import com.example.basicapp.R
+import com.example.basicapp.User
 
 class RegActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,7 +66,7 @@ class RegActivity : AppCompatActivity() {
             } else {
 
                 val user = User(email, login, pass)
-                val db = DbHelper(this, null)
+                val db = UserDbHelper(this, null)
 
                 if (db.getEmail(email)){
                     userEmail.setHintTextColor(Color.RED)

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Basic App</string>
+    <string name="app_name">Movie Collection</string>
     <string name="go_to_reg">Создать аккаунт:</string>
     <string name="auth_welcome_text">Авторизация:</string>
     <string name="go_to_auth">Войти</string>

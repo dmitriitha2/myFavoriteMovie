@@ -17,19 +17,16 @@
         android:theme="@style/Theme.BasicApp"
         tools:targetApi="31">
         <activity
-            android:name=".MovieImageActivity"
+            android:name=".activities.MovieInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".MovieInfoActivity"
+            android:name=".activities.MoviesActivity"
             android:exported="false" />
         <activity
-            android:name=".MoviesActivity"
+            android:name=".activities.RegActivity"
             android:exported="false" />
         <activity
-            android:name=".AuthActivity"
-            android:exported="false" />
-        <activity
-            android:name=".RegActivity"
+            android:name=".activities.AuthActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

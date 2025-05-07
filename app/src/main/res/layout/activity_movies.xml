@@ -7,7 +7,7 @@
     android:background="@color/pink"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MoviesActivity">
+    tools:context=".activities.MoviesActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -30,8 +30,7 @@
         android:background="@drawable/search_background"
         android:iconifiedByDefault="false"
         android:queryHint="Поиск по названию..."
-        android:textAlignment="viewStart"
-        />
+        android:textAlignment="viewStart" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/movies_list"

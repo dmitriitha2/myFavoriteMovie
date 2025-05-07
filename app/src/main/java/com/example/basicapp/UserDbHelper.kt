@@ -5,7 +5,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-class DbHelper(val context: Context, factory: SQLiteDatabase.CursorFactory?) :
+class UserDbHelper(val context: Context, factory: SQLiteDatabase.CursorFactory?) :
     SQLiteOpenHelper(context, "userApp", factory, 1) {
 
     override fun onCreate(db: SQLiteDatabase?) {
