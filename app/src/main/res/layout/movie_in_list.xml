@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:paddingLeft="15dp"
-            android:text="TextView"
+            android:text="Название"
             android:textColor="@color/white_text_2"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -46,7 +46,7 @@
                 android:textColor="@color/white_text_2"
                 android:layout_height="match_parent"
                 android:paddingLeft="15dp"
-                android:text="TextView" />
+                android:text="Страны," />
 
             <TextView
                 android:id="@+id/movie_year"
@@ -55,7 +55,15 @@
                 android:textColor="@color/white_text_2"
                 android:layout_weight="1"
                 android:paddingLeft="6dp"
-                android:text="TextView" />
+                android:text="Год" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@color/white_text_2"
+                android:layout_weight="1"
+                android:paddingLeft="3dp"
+                android:text="г." />
 
         </LinearLayout>
 
@@ -65,15 +73,29 @@
             android:layout_height="20dp"
             android:paddingLeft="15dp"
             android:textColor="@color/white_text_2"
-            android:text="TextView" />
+            android:text="Жанры" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/movie_rating"
             android:layout_width="match_parent"
             android:layout_height="20dp"
             android:textColor="@color/white_text_2"
             android:paddingLeft="15dp"
-            android:text="TextView" />
+            android:text="Рейтинг: " />
+
+        <TextView
+            android:id="@+id/movie_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:textColor="@color/white_text_2"
+            android:paddingLeft="5dp" />
+
+        </LinearLayout>
+
 
     </LinearLayout>
 

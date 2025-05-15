@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.SearchView
+import android.widget.TextView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -32,6 +33,9 @@ class MoviesActivity : AppCompatActivity() {
         copyDatabase(this)
         val moviesList: RecyclerView = findViewById(R.id.movies_list)
         allMovies = MoviesDbHelper(this).getAllMovies()
+
+        val quantity: TextView = findViewById(R.id.quantity)
+        quantity.text = "(${allMovies.size})"
 
         moviesList.layoutManager = LinearLayoutManager(this)
         moviesAdapter = MoviesAdapter(allMovies, this)

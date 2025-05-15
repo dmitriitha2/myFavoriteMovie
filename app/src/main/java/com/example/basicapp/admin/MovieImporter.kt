@@ -14,7 +14,7 @@ fun main() {
 
     //MovieImporter().import()
     //MovieImporter().downloadPosters()
-    MovieImporter().downloadCountriesAndGenres()
+    //MovieImporter().downloadCountriesAndGenres()
 }
 
 class MovieImporter {
@@ -23,6 +23,9 @@ class MovieImporter {
     val client = OkHttpClient()
     val db = DriverManager.getConnection("jdbc:sqlite:app/src/main/assets/movies.db")
     val outputDir = File("app/src/main/res/drawable")
+
+    val movieList = "TOP_POPULAR_ALL"
+    //val movieList = "TOP_250_MOVIES"
 
     fun import() {
 
@@ -166,7 +169,7 @@ class MovieImporter {
 
     fun sendRequestTop250(page: Int): JsonArray? {
         val request = Request.Builder()
-            .url("https://kinopoiskapiunofficial.tech/api/v2.2/films/collections?type=TOP_250_MOVIES&page=$page")
+            .url("https://kinopoiskapiunofficial.tech/api/v2.2/films/collections?type=$movieList&page=$page")
             .addHeader("accept", "application/json")
             .addHeader("X-API-KEY", apiKey)
             .build()

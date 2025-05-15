@@ -40,13 +40,33 @@ class MoviesAdapter(var movies: List<Movie>, var context: Context): RecyclerView
 
         val title = movies[position].titleRus
         val countries = movies[position].countries
+        val year = movies[position].year
         val genres = movies[position].genres
+        val rating = movies[position].rating
 
         holder.title.text = if (title.length <= 23) title else title.substring(0, 18) + "…"
-        holder.country.text = if (countries.length <= 18) countries + "," else countries.substring(0, 18) + "…"
-        holder.year.text = movies[position].year.toString() + "г."
-        holder.genre.text = if (genres.length <= 25) genres + "," else genres.substring(0, 25) + "…"
-        holder.rating.text = "Рейтинг: " + movies[position].rating.toString()
+
+        holder.country.text =
+            if (countries != null) {
+                if (countries.length <= 18){
+
+                    countries + ","
+                } else
+
+                    countries.substring(0, 18) + "…"
+        } else ""
+
+
+        holder.year.text = year ?: ""
+
+        holder.genre.text =
+            if (genres != null) {
+             if (genres.length <= 25) {
+                 genres + ","
+             } else genres.substring(0, 25) + "…"
+        } else ""
+
+        holder.rating.text = rating ?: ""
 
 
         val imageId = context.resources.getIdentifier(
@@ -61,6 +81,10 @@ class MoviesAdapter(var movies: List<Movie>, var context: Context): RecyclerView
             intent.putExtra("MovieTitle", movies[position].titleRus)
             intent.putExtra("MovieImage", movies[position].image)
             intent.putExtra("MovieDesc", movies[position].description)
+            intent.putExtra("MovieTitleEng", movies[position].titleOrig)
+            intent.putExtra("MovieYear", movies[position].year)
+            intent.putExtra("MovieAge", movies[position].ageRating)
+            intent.putExtra("MovieRating", movies[position].rating)
             context.startActivity(intent)
         }
     }

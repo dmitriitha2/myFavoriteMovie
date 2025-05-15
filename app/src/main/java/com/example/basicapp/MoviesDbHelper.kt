@@ -31,14 +31,14 @@ class MoviesDbHelper(context: Context) : SQLiteOpenHelper(context, "movies.db", 
                 val nameRu = cursor.getString(cursor.getColumnIndexOrThrow("titleRus"))
                 val nameOriginal = cursor.getStringOrNull(cursor.getColumnIndexOrThrow("titleOrig"))
                 val image = cursor.getString(cursor.getColumnIndexOrThrow("image"))
-                val year = cursor.getInt(cursor.getColumnIndexOrThrow("release_year"))
+                val year = cursor.getString(cursor.getColumnIndexOrThrow("release_year"))
                 val countries = (cursor.getString(cursor.getColumnIndexOrThrow("countries")) ?: "")
                     .split(",")
                     .joinToString(", ") { it.trim() }
                 val genres = (cursor.getString(cursor.getColumnIndexOrThrow("genres"))?: "")
                     .split(",")
                     .joinToString(", ") { it.trim() }
-                val rating = cursor.getFloat(cursor.getColumnIndexOrThrow("ratingKinopoisk"))
+                val rating = cursor.getString(cursor.getColumnIndexOrThrow("ratingKinopoisk")) ?: "-"
                 val ageRating = cursor.getStringOrNull(cursor.getColumnIndexOrThrow("age_rating"))
                 val description = cursor.getString(cursor.getColumnIndexOrThrow("description"))
 

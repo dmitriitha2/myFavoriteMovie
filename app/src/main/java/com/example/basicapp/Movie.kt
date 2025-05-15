@@ -5,10 +5,10 @@ data class Movie(
     val titleRus: String,
     val titleOrig: String?,
     val image: String,
-    val year: Int,
-    val countries: String,
-    val genres: String,
-    val rating: Float,
+    val year: String?,
+    val countries: String?,
+    val genres: String?,
+    val rating: String?,
     val ageRating: String?,
-    val description: String
+    val description: String?
 )

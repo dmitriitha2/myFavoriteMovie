@@ -27,14 +27,31 @@ class MovieInfoActivity : AppCompatActivity() {
             finish()
         }
 
-        val title: TextView = findViewById(R.id.movie_info_title)
+        val titleRus: TextView = findViewById(R.id.movie_info_title)
         val image: ImageView = findViewById(R.id.movie_info_image)
         val desc: TextView = findViewById(R.id.movie_info_desc)
+        val titleEng: TextView = findViewById(R.id.movie_info_title_eng)
+        val year: TextView = findViewById(R.id.movie_info_year)
+        val age: TextView = findViewById(R.id.movie_info_age)
+        val rating: TextView = findViewById(R.id.movie_info_rating)
 
-        title.text = intent.getStringExtra("MovieTitle")
+
+        titleRus.text = intent.getStringExtra("MovieTitle")
         desc.text = intent.getStringExtra("MovieDesc")
-        val movieImageName = intent.getStringExtra("MovieImage")
+        titleEng.text = intent.getStringExtra("MovieTitleEng")
+        year.text = intent.getStringExtra("MovieYear")+" г."
+        rating.text = intent.getStringExtra("MovieRating")
 
+        val movieAge = intent.getStringExtra("MovieAge")
+        age.text =
+            if (movieAge != null && movieAge.length >= 4) {
+                movieAge.substring(3) + "+"
+            } else {
+                "-"
+            }
+
+
+        val movieImageName = intent.getStringExtra("MovieImage")
         if (movieImageName != null) {
             val imageResId = resources.getIdentifier(movieImageName, "drawable", packageName)
             if (imageResId != 0) {

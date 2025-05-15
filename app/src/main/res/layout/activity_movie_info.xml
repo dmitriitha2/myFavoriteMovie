@@ -53,18 +53,126 @@
             android:foreground="?attr/selectableItemBackground"
             app:srcCompat="@drawable/a326" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
         <TextView
             android:id="@+id/movie_info_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp"
+            android:layout_marginVertical="7dp"
             android:paddingLeft="10dp"
-            android:text="TextView"
+            android:text="название"
             android:singleLine="false"
             android:ellipsize="none"
             android:textColor="@color/white_text_1"
             android:textSize="25sp"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/movie_info_title_eng"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="7dp"
+            android:paddingLeft="10dp"
+            android:text="название англ"
+            android:singleLine="false"
+            android:ellipsize="none"
+            android:textColor="@color/white_text_2"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="3dp"
+            android:paddingLeft="10dp"
+            android:text="Дата выхода: "
+            android:singleLine="false"
+            android:ellipsize="none"
+            android:textColor="@color/white_text_2"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/movie_info_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="3dp"
+            android:paddingLeft="10dp"
+            android:singleLine="false"
+            android:ellipsize="none"
+            android:textColor="@color/white_text_1"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="3dp"
+            android:paddingLeft="10dp"
+            android:text="Возраст: "
+            android:singleLine="false"
+            android:ellipsize="none"
+            android:textColor="@color/white_text_2"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/movie_info_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="3dp"
+            android:paddingLeft="10dp"
+            android:singleLine="false"
+            android:ellipsize="none"
+            android:textColor="@color/white_text_1"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="3dp"
+                android:paddingLeft="10dp"
+                android:text="Рейтинг: "
+                android:singleLine="false"
+                android:ellipsize="none"
+                android:textColor="@color/white_text_2"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/movie_info_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="3dp"
+                android:paddingLeft="10dp"
+                android:singleLine="false"
+                android:ellipsize="none"
+                android:textColor="@color/white_text_1"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
@@ -73,11 +181,20 @@
         android:orientation="vertical">
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginHorizontal="10dp"
+            android:textColor="@color/white_text_2"
+            android:text="Описание:" />
+
+        <TextView
             android:id="@+id/movie_info_desc"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="17sp"
-            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginHorizontal="10dp"
             android:textColor="@color/white_text_1"
             android:text="TextView" />
     </LinearLayout>
